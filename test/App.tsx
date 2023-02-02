@@ -6,6 +6,7 @@ import {
     useHostname6,
     useIpv4Address,
     useIpv6Address,
+    useMacAddress,
 } from '../src/index';
 
 export const App: FC = () => {
@@ -14,6 +15,7 @@ export const App: FC = () => {
     const ipv6 = useIpv6Address();
     const hostname = useHostname();
     const hostname6 = useHostname6();
+    const mac = useMacAddress();
 
     return (
         <div>
@@ -23,6 +25,7 @@ export const App: FC = () => {
             <p>Current ipv6: {ipv6}</p>
             <p>Current hostname: {hostname}</p>
             <p>Current hostname6: {hostname6}</p>
+            <p>Current mac: {mac}</p>
         </div>
     );
 };
