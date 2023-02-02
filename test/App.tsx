@@ -21,6 +21,7 @@ import {
     useSerialNumber,
     useSerialNumberDeviceOwner,
     useSimSerialNumber,
+    useWifi,
     useWifiBSSID,
     useWifiSignalLevel,
     useWifiSSID,
@@ -58,6 +59,14 @@ export const App: FC = () => {
         turnOff,
     } = useScreenSleep();
     const { keyboardVisible, hideKeyboard, showKeyboard } = useKeyboard();
+    const {
+        enableWifi,
+        disableWifi,
+        openWifiSettings,
+        networkConnected,
+        wifiConnected,
+        wifiEnabled,
+    } = useWifi();
 
     return (
         <div>
@@ -123,6 +132,13 @@ export const App: FC = () => {
                 >
                     Show n Hide (5s)
                 </button>
+            </p>
+            <p>
+                <div>Wifi Enabled: {wifiEnabled ? 'yes' : 'no'}</div>
+                <div>Wifi Connected: {wifiConnected ? 'yes' : 'no'}</div>
+                <div>Network Connected: {networkConnected ? 'yes' : 'no'}</div>
+                <button onClick={openWifiSettings}>Settings</button>
+                <button onClick={enableWifi}>Enable</button>
             </p>
         </div>
     );

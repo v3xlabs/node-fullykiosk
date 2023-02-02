@@ -4,6 +4,8 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { is_fully } from '../utils/is_fully';
 
+window._fullykiosk = window._fullykiosk || {};
+
 // Returns undefined if fully not available
 export const useBatteryLevel = () => {
     if (!is_fully()) return { batteryLevel: undefined };

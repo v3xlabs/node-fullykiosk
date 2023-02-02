@@ -18,5 +18,6 @@ export * from './hooks/useScreenBrightness';
 export * from './hooks/useScreenSleep';
 export * from './hooks/useSerialNumber';
 export * from './hooks/useSimSerialNumber';
+export * from './hooks/useWifi';
 export * from './hooks/useWifiSignalLevel';
 export * from './hooks/useWifiSSID';
