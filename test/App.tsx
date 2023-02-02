@@ -7,6 +7,7 @@ import {
     useCurrentLocale,
     useDeviceId,
     useDeviceName,
+    useDisplaySize,
     useHostname,
     useHostname6,
     useImei,
@@ -45,6 +46,7 @@ export const App: FC = () => {
     const { charging, chargeState } = useCharging();
     const { brightness, setBrightness } = useScreenBrightness();
     const orientation = useOrientation();
+    const { width, height } = useDisplaySize();
 
     return (
         <div>
@@ -78,6 +80,9 @@ export const App: FC = () => {
                 <button onClick={() => setBrightness(255)}>255</button>
             </p>
             <p>Current orientation: {orientation}</p>
+            <p>
+                Display size: {width} x {height}
+            </p>
         </div>
     );
 };

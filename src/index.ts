@@ -6,6 +6,7 @@ export * from './hooks/useCharging';
 export * from './hooks/useCurrentLocale';
 export * from './hooks/useDeviceId';
 export * from './hooks/useDeviceName';
+export * from './hooks/useDisplaySize';
 export * from './hooks/useHostname';
 export * from './hooks/useImei';
 export * from './hooks/useIpv4Address';
