@@ -13,6 +13,7 @@ import {
     useIpv4Address,
     useIpv6Address,
     useMacAddress,
+    useScreenBrightness,
     useSerialNumber,
     useSerialNumberDeviceOwner,
     useSimSerialNumber,
@@ -41,6 +42,7 @@ export const App: FC = () => {
     const sim_serial_number = useSimSerialNumber();
     const { batteryLevel } = useBatteryLevel();
     const { charging, chargeState } = useCharging();
+    const { brightness, setBrightness } = useScreenBrightness();
 
     return (
         <div>
@@ -65,6 +67,13 @@ export const App: FC = () => {
             <p>Current battery level: {batteryLevel}</p>
             <p>
                 Current charging: {charging} - {chargeState}
+            </p>
+            <p>
+                Current brightness: {brightness} -{' '}
+                <button onClick={() => setBrightness(10)}>10</button>
+                <button onClick={() => setBrightness(50)}>50</button>
+                <button onClick={() => setBrightness(100)}>100</button>
+                <button onClick={() => setBrightness(255)}>255</button>
             </p>
         </div>
     );
