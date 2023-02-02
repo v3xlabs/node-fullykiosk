@@ -14,6 +14,7 @@ export * from './hooks/useIpv6Address';
 export * from './hooks/useKeyboard';
 export * from './hooks/useMacAddress';
 export * from './hooks/useOrientation';
+export * from './hooks/useQRScanner';
 export * from './hooks/useScreenBrightness';
 export * from './hooks/useScreenSleep';
 export * from './hooks/useSerialNumber';

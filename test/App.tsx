@@ -16,6 +16,7 @@ import {
     useKeyboard,
     useMacAddress,
     useOrientation,
+    useQRScanner,
     useScreenBrightness,
     useScreenSleep,
     useSerialNumber,
@@ -67,6 +68,11 @@ export const App: FC = () => {
         wifiConnected,
         wifiEnabled,
     } = useWifi();
+    const { scannedQR, startScanning } = useQRScanner({
+        onScan: (data) => {
+            alert(`Scanned QR: ${data}`);
+        },
+    });
 
     return (
         <div>
@@ -139,6 +145,12 @@ export const App: FC = () => {
                 <div>Network Connected: {networkConnected ? 'yes' : 'no'}</div>
                 <button onClick={openWifiSettings}>Settings</button>
                 <button onClick={enableWifi}>Enable</button>
+            </p>
+            <p>
+                <div>QRCode: {scannedQR}</div>
+                <button onClick={() => startScanning('Scan plz', 'd')}>
+                    Start Scanning
+                </button>
             </p>
         </div>
     );

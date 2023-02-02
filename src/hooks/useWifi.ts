@@ -1,8 +1,12 @@
 import { useEffect, useMemo } from 'react';
 
+import { is_fully } from '../utils/is_fully';
+
 window._fullykiosk = window._fullykiosk || {};
 
 export const useWifi = () => {
+    if (!is_fully()) return { wifiEnabled: undefined, enableWifi: () => {} };
+
     const wifiEnabled = fully.isWifiEnabled();
     const wifiConnected = fully.isWifiConnected();
     const networkConnected = fully.isNetworkConnected();
