@@ -13,6 +13,7 @@ import {
     useIpv4Address,
     useIpv6Address,
     useMacAddress,
+    useOrientation,
     useScreenBrightness,
     useSerialNumber,
     useSerialNumberDeviceOwner,
@@ -43,6 +44,7 @@ export const App: FC = () => {
     const { batteryLevel } = useBatteryLevel();
     const { charging, chargeState } = useCharging();
     const { brightness, setBrightness } = useScreenBrightness();
+    const orientation = useOrientation();
 
     return (
         <div>
@@ -75,6 +77,7 @@ export const App: FC = () => {
                 <button onClick={() => setBrightness(100)}>100</button>
                 <button onClick={() => setBrightness(255)}>255</button>
             </p>
+            <p>Current orientation: {orientation}</p>
         </div>
     );
 };
