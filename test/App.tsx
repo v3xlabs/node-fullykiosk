@@ -2,6 +2,8 @@ import React, { FC } from 'react';
 
 import {
     useAndroidId,
+    useBatteryLevel,
+    useCharging,
     useCurrentLocale,
     useDeviceId,
     useDeviceName,
@@ -37,6 +39,8 @@ export const App: FC = () => {
     const device_name = useDeviceName();
     const imei = useImei();
     const sim_serial_number = useSimSerialNumber();
+    const { batteryLevel } = useBatteryLevel();
+    const { charging, chargeState } = useCharging();
 
     return (
         <div>
@@ -58,6 +62,10 @@ export const App: FC = () => {
             <p>Current device name: {device_name}</p>
             <p>Current imei: {imei}</p>
             <p>Current sim serial number: {sim_serial_number}</p>
+            <p>Current battery level: {batteryLevel}</p>
+            <p>
+                Current charging: {charging} - {chargeState}
+            </p>
         </div>
     );
 };

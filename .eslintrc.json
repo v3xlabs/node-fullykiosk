@@ -9,8 +9,9 @@
     "ignorePatterns": ["!**/*"],
     "plugins": ["lvksh"],
     "env": {
-        "node": true,
-        "jest/globals": true
+        "browser": true
     },
-    "rules": {}
+    "rules": {
+        "no-undef": "off"
+    }
 }

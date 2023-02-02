@@ -1,6 +1,8 @@
 /* eslint-disable no-undef */
 
 export * from './hooks/useAndroidId';
+export * from './hooks/useBatteryLevel';
+export * from './hooks/useCharging';
 export * from './hooks/useCurrentLocale';
 export * from './hooks/useDeviceId';
 export * from './hooks/useDeviceName';

@@ -4,11 +4,6 @@ export {};
 
 // Stubborn Fully Kiosk API
 declare global {
-    interface Window {
-        _fullykiosk: {
-            [key: string]: any;
-        };
-    }
     let fully: {
         getCurrentLocale(): string;
         getIp4Address(): string;
