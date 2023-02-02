@@ -1,12 +1,16 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 
 import {
+    useAndroidId,
     useCurrentLocale,
+    useDeviceId,
     useHostname,
     useHostname6,
     useIpv4Address,
     useIpv6Address,
     useMacAddress,
+    useSerialNumber,
+    useSerialNumberDeviceOwner,
     useWifiBSSID,
     useWifiSignalLevel,
     useWifiSSID,
@@ -23,6 +27,10 @@ export const App: FC = () => {
     const ssid = useWifiSSID();
     const bssid = useWifiBSSID();
     const wifiSignal = useWifiSignalLevel();
+    const serial = useSerialNumber();
+    const serial_device = useSerialNumberDeviceOwner();
+    const android_id = useAndroidId();
+    const device_id = useDeviceId();
 
     return (
         <div>
@@ -37,6 +45,10 @@ export const App: FC = () => {
             <p>Current ssid: {ssid}</p>
             <p>Current bssid: {bssid}</p>
             <p>Current wifiSignal: {wifiSignal}</p>
+            <p>Current serial: {serial}</p>
+            <p>Current serial device owner: {serial_device}</p>
+            <p>Current android id: {android_id}</p>
+            <p>Current device id: {device_id}</p>
         </div>
     );
 };
