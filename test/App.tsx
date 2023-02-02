@@ -7,6 +7,7 @@ import {
     useDeviceName,
     useHostname,
     useHostname6,
+    useImei,
     useIpv4Address,
     useIpv6Address,
     useMacAddress,
@@ -33,6 +34,7 @@ export const App: FC = () => {
     const android_id = useAndroidId();
     const device_id = useDeviceId();
     const device_name = useDeviceName();
+    const imei = useImei();
 
     return (
         <div>
@@ -52,6 +54,7 @@ export const App: FC = () => {
             <p>Current android id: {android_id}</p>
             <p>Current device id: {device_id}</p>
             <p>Current device name: {device_name}</p>
+            <p>Current imei: {imei}</p>
         </div>
     );
 };
