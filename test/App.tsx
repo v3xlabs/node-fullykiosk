@@ -4,6 +4,7 @@ import {
     useAndroidId,
     useCurrentLocale,
     useDeviceId,
+    useDeviceName,
     useHostname,
     useHostname6,
     useIpv4Address,
@@ -31,6 +32,7 @@ export const App: FC = () => {
     const serial_device = useSerialNumberDeviceOwner();
     const android_id = useAndroidId();
     const device_id = useDeviceId();
+    const device_name = useDeviceName();
 
     return (
         <div>
@@ -49,6 +51,7 @@ export const App: FC = () => {
             <p>Current serial device owner: {serial_device}</p>
             <p>Current android id: {android_id}</p>
             <p>Current device id: {device_id}</p>
+            <p>Current device name: {device_name}</p>
         </div>
     );
 };
