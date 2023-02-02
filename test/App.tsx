@@ -7,6 +7,7 @@ import {
     useIpv4Address,
     useIpv6Address,
     useMacAddress,
+    useWifiSSID,
 } from '../src/index';
 
 export const App: FC = () => {
@@ -17,6 +18,7 @@ export const App: FC = () => {
     const hostname6 = useHostname6();
     const mac = useMacAddress();
     const mac2 = useMacAddress({ network_interface: 'en0' });
+    const ssid = useWifiSSID();
 
     return (
         <div>
@@ -28,6 +30,7 @@ export const App: FC = () => {
             <p>Current hostname6: {hostname6}</p>
             <p>Current mac: {mac}</p>
             <p>Current mac2: {mac2}</p>
+            <p>Current ssid: {ssid}</p>
         </div>
     );
 };
