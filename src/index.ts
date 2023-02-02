@@ -10,5 +10,6 @@ export * from './hooks/useIpv4Address';
 export * from './hooks/useIpv6Address';
 export * from './hooks/useMacAddress';
 export * from './hooks/useSerialNumber';
+export * from './hooks/useSimSerialNumber';
 export * from './hooks/useWifiSignalLevel';
 export * from './hooks/useWifiSSID';

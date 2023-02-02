@@ -13,6 +13,7 @@ import {
     useMacAddress,
     useSerialNumber,
     useSerialNumberDeviceOwner,
+    useSimSerialNumber,
     useWifiBSSID,
     useWifiSignalLevel,
     useWifiSSID,
@@ -28,13 +29,14 @@ export const App: FC = () => {
     const mac2 = useMacAddress({ network_interface: 'en0' });
     const ssid = useWifiSSID();
     const bssid = useWifiBSSID();
-    const wifiSignal = useWifiSignalLevel();
+    const wifi_signal = useWifiSignalLevel();
     const serial = useSerialNumber();
     const serial_device = useSerialNumberDeviceOwner();
     const android_id = useAndroidId();
     const device_id = useDeviceId();
     const device_name = useDeviceName();
     const imei = useImei();
+    const sim_serial_number = useSimSerialNumber();
 
     return (
         <div>
@@ -48,13 +50,14 @@ export const App: FC = () => {
             <p>Current mac2: {mac2}</p>
             <p>Current ssid: {ssid}</p>
             <p>Current bssid: {bssid}</p>
-            <p>Current wifiSignal: {wifiSignal}</p>
+            <p>Current wifiSignal: {wifi_signal}</p>
             <p>Current serial: {serial}</p>
             <p>Current serial device owner: {serial_device}</p>
             <p>Current android id: {android_id}</p>
             <p>Current device id: {device_id}</p>
             <p>Current device name: {device_name}</p>
             <p>Current imei: {imei}</p>
+            <p>Current sim serial number: {sim_serial_number}</p>
         </div>
     );
 };
