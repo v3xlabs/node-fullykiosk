@@ -13,6 +13,7 @@ import {
     useImei,
     useIpv4Address,
     useIpv6Address,
+    useKeyboard,
     useMacAddress,
     useOrientation,
     useScreenBrightness,
@@ -56,6 +57,7 @@ export const App: FC = () => {
         stopScreensaver,
         turnOff,
     } = useScreenSleep();
+    const { keyboardVisible, hideKeyboard, showKeyboard } = useKeyboard();
 
     return (
         <div>
@@ -103,6 +105,24 @@ export const App: FC = () => {
                     Stop Screensaver
                 </button>
                 <button onClick={() => turnOff()}>Sleep</button>
+            </p>
+            <p>
+                Keyboard state: {keyboardVisible ? 'Visible' : 'Hidden'}
+                <button
+                    onClick={() => {
+                        showKeyboard();
+                    }}
+                >
+                    Show
+                </button>
+                <button
+                    onClick={() => {
+                        showKeyboard();
+                        setTimeout(hideKeyboard, 5000);
+                    }}
+                >
+                    Show n Hide (5s)
+                </button>
             </p>
         </div>
     );
