@@ -8,6 +8,7 @@ import {
     useIpv6Address,
     useMacAddress,
     useWifiBSSID,
+    useWifiSignalLevel,
     useWifiSSID,
 } from '../src/index';
 
@@ -21,6 +22,7 @@ export const App: FC = () => {
     const mac2 = useMacAddress({ network_interface: 'en0' });
     const ssid = useWifiSSID();
     const bssid = useWifiBSSID();
+    const wifiSignal = useWifiSignalLevel();
 
     return (
         <div>
@@ -34,6 +36,7 @@ export const App: FC = () => {
             <p>Current mac2: {mac2}</p>
             <p>Current ssid: {ssid}</p>
             <p>Current bssid: {bssid}</p>
+            <p>Current wifiSignal: {wifiSignal}</p>
         </div>
     );
 };
