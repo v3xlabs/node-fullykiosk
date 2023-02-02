@@ -16,6 +16,7 @@ import {
     useMacAddress,
     useOrientation,
     useScreenBrightness,
+    useScreenSleep,
     useSerialNumber,
     useSerialNumberDeviceOwner,
     useSimSerialNumber,
@@ -47,6 +48,14 @@ export const App: FC = () => {
     const { brightness, setBrightness } = useScreenBrightness();
     const orientation = useOrientation();
     const { width, height } = useDisplaySize();
+    const {
+        isScreenOn,
+        startDaydream,
+        stopDaydream,
+        startScreensaver,
+        stopScreensaver,
+        turnOff,
+    } = useScreenSleep();
 
     return (
         <div>
@@ -82,6 +91,18 @@ export const App: FC = () => {
             <p>Current orientation: {orientation}</p>
             <p>
                 Display size: {width} x {height}
+            </p>
+            <p>
+                Screen state: {isScreenOn ? 'Screen is on' : 'Screen is off'}
+                <button onClick={() => startDaydream()}>Start Daydream</button>
+                <button onClick={() => stopDaydream()}>Stop Daydream</button>
+                <button onClick={() => startScreensaver()}>
+                    Start Screensaver
+                </button>
+                <button onClick={() => stopScreensaver()}>
+                    Stop Screensaver
+                </button>
+                <button onClick={() => turnOff()}>Sleep</button>
             </p>
         </div>
     );
