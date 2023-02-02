@@ -16,6 +16,7 @@ export const App: FC = () => {
     const hostname = useHostname();
     const hostname6 = useHostname6();
     const mac = useMacAddress();
+    const mac2 = useMacAddress({ network_interface: 'en0' });
 
     return (
         <div>
@@ -26,6 +27,7 @@ export const App: FC = () => {
             <p>Current hostname: {hostname}</p>
             <p>Current hostname6: {hostname6}</p>
             <p>Current mac: {mac}</p>
+            <p>Current mac2: {mac2}</p>
         </div>
     );
 };
