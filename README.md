@@ -65,7 +65,7 @@ yarn add fullykiosk
 - [x] isWifiConnected()
 - [x] isNetworkConnected()
 - [x] isBluetoothEnabled()
-- [ ] isScreenRotationLocked()
+- [x] isScreenRotationLocked()
 - [ ] getFullyVersion()
 - [ ] getFullyVersionCode()
 - [ ] getWebviewVersion()
