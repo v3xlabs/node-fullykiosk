@@ -19,6 +19,7 @@ import {
     useOrientation,
     useQRScanner,
     useScreenBrightness,
+    useScreenRotationLock,
     useScreenSleep,
     useSerialNumber,
     useSerialNumberDeviceOwner,
@@ -80,6 +81,7 @@ export const App: FC = () => {
         openSettings: openBluetoothSettings,
         enabled: isBluetoothEnabled,
     } = useBluetooth();
+    const screenRotationLocked = useScreenRotationLock();
 
     return (
         <div>
@@ -167,6 +169,7 @@ export const App: FC = () => {
                 <button onClick={enableBluetooth}>Enable</button>
                 <button onClick={disableBluetooth}>Disable</button>
             </p>
+            <p>Screen Rotation Locked: {screenRotationLocked ? 'yes' : 'no'}</p>
         </div>
     );
 };

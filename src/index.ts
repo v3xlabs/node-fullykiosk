@@ -17,6 +17,7 @@ export * from './hooks/useMacAddress';
 export * from './hooks/useOrientation';
 export * from './hooks/useQRScanner';
 export * from './hooks/useScreenBrightness';
+export * from './hooks/useScreenRotationLock';
 export * from './hooks/useScreenSleep';
 export * from './hooks/useSerialNumber';
 export * from './hooks/useSimSerialNumber';
