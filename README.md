@@ -64,7 +64,7 @@ yarn add fullykiosk
 - [x] isWifiEnabled()
 - [x] isWifiConnected()
 - [x] isNetworkConnected()
-- [ ] isBluetoothEnabled()
+- [x] isBluetoothEnabled()
 - [ ] isScreenRotationLocked()
 - [ ] getFullyVersion()
 - [ ] getFullyVersionCode()
@@ -92,12 +92,12 @@ yarn add fullykiosk
 - [x] setScreenBrightness(float level)
 - [x] enableWifi() // In Android 10+ only with provisioned devices
 - [x] disableWifi() // In Android 10+ only with provisioned devices
-- [ ] enableBluetooth()
-- [ ] disableBluetooth()
+- [x] enableBluetooth()
+- [x] disableBluetooth()
 - [x] showKeyboard()
 - [x] hideKeyboard()
 - [x] openWifiSettings()
-- [ ] openBluetoothSettings()
+- [x] openBluetoothSettings()
 - [ ] vibrate(int millis)
 - [ ] sendHexDataToTcpPort(String hexData, String host, int port)
 - [ ] showNotification(String title, String text, String url, boolean highPriority) // ver. 1.33+
@@ -168,11 +168,11 @@ yarn add fullykiosk
 - [ ] focusThisTab()
 - [ ] focusTabByIndex(int index)
 
-- [ ] scanQrCode(String prompt, String resultUrl)
-- [ ] scanQrCode(String prompt, String resultUrl, int cameraId, int timeout, boolean beepEnabled, boolean showCancelButton)
-- [ ] scanQrCode(String prompt, String resultUrl, int cameraId, int timeout, boolean beepEnabled, boolean showCancelButton, boolean useFlashlight)
-- [ ] bind('onQrScanSuccess','todo(\'$code\');')
-- [ ] bind('onQrScanCancelled','todo();')
+- [x] scanQrCode(String prompt, String resultUrl)
+- [x] scanQrCode(String prompt, String resultUrl, int cameraId, int timeout, boolean beepEnabled, boolean showCancelButton)
+- [x] scanQrCode(String prompt, String resultUrl, int cameraId, int timeout, boolean beepEnabled, boolean showCancelButton, boolean useFlashlight)
+- [x] bind('onQrScanSuccess','todo(\'$code\');')
+- [x] bind('onQrScanCancelled','todo();')
 
 - [ ] btOpenByMac(String mac)
 - [ ] btOpenByUuid(String uuid)

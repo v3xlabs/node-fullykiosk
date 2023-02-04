@@ -2,6 +2,7 @@
 
 export * from './hooks/useAndroidId';
 export * from './hooks/useBatteryLevel';
+export * from './hooks/useBluetooth';
 export * from './hooks/useCharging';
 export * from './hooks/useCurrentLocale';
 export * from './hooks/useDeviceId';

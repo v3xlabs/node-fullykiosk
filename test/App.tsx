@@ -3,6 +3,7 @@ import React, { FC } from 'react';
 import {
     useAndroidId,
     useBatteryLevel,
+    useBluetooth,
     useCharging,
     useCurrentLocale,
     useDeviceId,
@@ -73,6 +74,12 @@ export const App: FC = () => {
             alert(`Scanned QR: ${data}`);
         },
     });
+    const {
+        enable: enableBluetooth,
+        disable: disableBluetooth,
+        openSettings: openBluetoothSettings,
+        enabled: isBluetoothEnabled,
+    } = useBluetooth();
 
     return (
         <div>
@@ -151,6 +158,14 @@ export const App: FC = () => {
                 <button onClick={() => startScanning('Scan plz', 'd')}>
                     Start Scanning
                 </button>
+            </p>
+            <p>
+                <div>
+                    Bluetooth Enabled: {isBluetoothEnabled ? 'yes' : 'no'}
+                </div>
+                <button onClick={openBluetoothSettings}>Settings</button>
+                <button onClick={enableBluetooth}>Enable</button>
+                <button onClick={disableBluetooth}>Disable</button>
             </p>
         </div>
     );
