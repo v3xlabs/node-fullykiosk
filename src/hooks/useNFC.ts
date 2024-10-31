@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { is_fully } from '../utils/is_fully';
 
 const preflight = () => {
-    if (!is_fully) {
+    if (!is_fully()) {
         alert('Fully not available');
         throw new Error('Fully not available');
     }
