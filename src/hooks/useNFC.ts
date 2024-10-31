@@ -1,10 +1,8 @@
-// Gets the current mac address
-
 import { useCallback, useEffect, useState } from 'react';
 import { is_fully } from '../utils/is_fully';
 
-// Returns undefined if fully not available
-export const useNFC = (config?: { onNdef: (data: string) => void }) => {
+export const useNFC = (config?:
+    { onNdef: (serial: string, message: string, data: string) => void, onNfcTagDiscovered: (serial: string, type: string, message: string, data: string) => void, onNfcTagRemoved: (serial: string) => void }) => {
     if (!is_fully()) {
         return;
     }
@@ -22,9 +20,28 @@ export const useNFC = (config?: { onNdef: (data: string) => void }) => {
     }, []);
 
     useEffect(() => {
-        fully.bind('onNdefDiscovered', 'alert("$serial", "$message", "$data");');
-        fully.bind('onNfcTagDiscovered','alert("$serial", "$type", "$message", "$data");');
-        fully.bind('onNfcTagRemoved','alert("$serial");');
+        // @ts-ignore
+        window.onNdefDiscovered = (serial: string, message: string, data: string) => {
+            if (config?.onNdef) {
+                config.onNdef(serial, message, data);
+            }
+        };
+        // @ts-ignore
+        window.onNfcTagDiscovered = (serial: string, type: string, message: string, data: string) => {
+            if (config?.onNfcTagDiscovered) {
+                config.onNfcTagDiscovered(serial, type, message, data);
+            }
+        };
+        // @ts-ignore
+        window.onNfcTagRemoved = (serial: string) => {
+            if (config?.onNfcTagRemoved) {
+                config.onNfcTagRemoved(serial);
+            }
+        };
+
+        fully.bind('onNdefDiscovered', 'onNdefDiscovered("$serial", "$message", "$data");');
+        fully.bind('onNfcTagDiscovered', 'onNfcTagDiscovered("$serial", "$type", "$message", "$data");');
+        fully.bind('onNfcTagRemoved', 'onNfcTagRemoved("$serial");');
     }, []);
 
     return {
